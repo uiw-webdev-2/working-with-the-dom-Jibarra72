@@ -4,17 +4,28 @@
  * @link https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll
  */
 
-import Backpack from "./Backpack.js";
+import PineTree from "./PineTree.js";
 
-const everydayPack = new Backpack(
+const Tree = new PineTree(
+  'PineTree.jpg',
+  'Pine',
+  'Brown',
+  '30 feet',
+  '2 feet',
+  false,
 );
 
 const content = `
-     <figure class="backpack__image">
-       <img src= alt="" />
+     <figure class="PineTree__image">
+       <img src=${Tree.image} alt="" />
      </figure>
-     <h1 class="backpack__name"></h1>
-     <ul class="backpack__features">
+     <h1 class=""></h1>
+     <ul class="PineTree__features">
+     <li>Type: ${Tree.type}<li>
+     <li>Color: ${Tree.color}<li>
+     <li>Height: ${Tree.height}<li>
+     <li>Width: ${Tree.width}<li>     
+     <li>Does it produce pinecones?: ${Tree.pinecone}<li>
      </ul>
    </article>
  `;
@@ -23,8 +34,8 @@ const main = document.querySelector(".maincontent");
 
 
 const newArticle = document.createElement('article');
-newArticle.classList.add('backpack');
-newArticle.setAttribute('id','everyday');
+newArticle.classList.add('PineTree');
+newArticle.setAttribute('id','Green');
 newArticle.innerHTML = content;
 
 main.append(newArticle);
